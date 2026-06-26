@@ -73,7 +73,6 @@ class Settings(BaseSettings):
 
 # 创建全局配置实例
 settings = Settings()
-_RUNTIME_SETTINGS_FILE = Path(__file__).resolve().parent.parent / "runtime_settings.json"
 _RUNTIME_SETTING_KEYS = {
     "vite_amap_web_key",
     "vite_amap_web_js_key",
@@ -87,24 +86,32 @@ _RUNTIME_SETTING_KEYS = {
 
 
 def _load_runtime_overrides() -> Dict[str, Any]:
-    """加载本地持久化的运行时配置覆盖项。"""
-    if not _RUNTIME_SETTINGS_FILE.exists():
-        return {}
+    """从数据库加载运行时配置覆盖项。"""
     try:
-        with open(_RUNTIME_SETTINGS_FILE, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        if isinstance(data, dict):
-            return {k: data[k] for k in _RUNTIME_SETTING_KEYS if k in data}
+        from .database import SessionLocal
+        from .database.crud import get_all_settings
+        db = SessionLocal()
+        try:
+            return get_all_settings(db)
+        finally:
+            db.close()
     except Exception as e:
-        print(f"⚠️  读取运行时配置失败，已回退到环境变量: {e}")
+        print(f"⚠️  从数据库读取运行时配置失败: {e}")
     return {}
 
 
 def _persist_runtime_overrides(overrides: Dict[str, Any]) -> None:
-    """持久化运行时配置覆盖项。"""
-    _RUNTIME_SETTINGS_FILE.parent.mkdir(parents=True, exist_ok=True)
-    with open(_RUNTIME_SETTINGS_FILE, "w", encoding="utf-8") as f:
-        json.dump(overrides, f, ensure_ascii=False, indent=2)
+    """持久化运行时配置覆盖项到数据库。"""
+    try:
+        from .database import SessionLocal
+        from .database.crud import set_settings_bulk
+        db = SessionLocal()
+        try:
+            set_settings_bulk(db, overrides)
+        finally:
+            db.close()
+    except Exception as e:
+        print(f"⚠️  持久化运行时配置到数据库失败: {e}")
 
 
 def _sync_env_from_settings() -> None:

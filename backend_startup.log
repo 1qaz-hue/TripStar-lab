@@ -1,0 +1,777 @@
+INFO:     Will watch for changes in these directories: ['C:\\Users\\����\\TripStar\\backend']
+C:\Users\联想\TripStar\backend\app\api\routes\map.py:24: FastAPIDeprecationWarning: `example` has been deprecated, please use `examples` instead
+  keywords: str = Query(..., description="搜索关键词", example="故宫"),
+C:\Users\联想\TripStar\backend\app\api\routes\map.py:25: FastAPIDeprecationWarning: `example` has been deprecated, please use `examples` instead
+  city: str = Query(..., description="城市", example="北京"),
+C:\Users\联想\TripStar\backend\app\api\routes\map.py:67: FastAPIDeprecationWarning: `example` has been deprecated, please use `examples` instead
+  city: str = Query(..., description="城市名称", example="北京")
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [7624] using WatchFiles
+C:\Users\联想\TripStar\backend\app\api\routes\map.py:24: FastAPIDeprecationWarning: `example` has been deprecated, please use `examples` instead
+  keywords: str = Query(..., description="搜索关键词", example="故宫"),
+C:\Users\联想\TripStar\backend\app\api\routes\map.py:25: FastAPIDeprecationWarning: `example` has been deprecated, please use `examples` instead
+  city: str = Query(..., description="城市", example="北京"),
+C:\Users\联想\TripStar\backend\app\api\routes\map.py:67: FastAPIDeprecationWarning: `example` has been deprecated, please use `examples` instead
+  city: str = Query(..., description="城市名称", example="北京")
+INFO:     Started server process [31956]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:watchfiles.main:6 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:6 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:48 changes detected
+INFO:watchfiles.main:15 changes detected
+INFO:watchfiles.main:38 changes detected
+INFO:watchfiles.main:7 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:12 changes detected
+INFO:watchfiles.main:5 changes detected
+INFO:watchfiles.main:5 changes detected
+INFO:watchfiles.main:5 changes detected
+INFO:watchfiles.main:5 changes detected
+INFO:watchfiles.main:5 changes detected
+INFO:watchfiles.main:5 changes detected
+INFO:watchfiles.main:5 changes detected
+INFO:watchfiles.main:5 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:2 changes detected
+WARNING:  WatchFiles detected changes in 'app\database\__init__.py'. Reloading...
+ 
+C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\fastmcp\server\auth\providers\jwt.py:10: AuthlibDeprecationWarning: authlib.jose module is deprecated, please use joserfc instead.
+It will be compatible before version 2.0.0.
+  from authlib.jose import JsonWebKey, JsonWebToken
+C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\hello_agents\tools\builtin\protocol_tools.py:278: RuntimeWarning: coroutine 'MCPTool._discover_tools.<locals>.discover' was never awaited
+  self._available_tools = []
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+
+============================================================
+📥 收到旅行规划请求 (task_id=ebad04df):
+   城市: 洛阳
+   日期: 2026-07-22 - 2026-07-23
+   天数: 2
+============================================================
+
+🔄 开始初始化多智能体旅行规划系统...
+✅ LLM服务初始化成功
+   提供商: openai
+   模型: ep-20260402174336-j4947
+  - 地图供应商: AMAP
+  - 创建高德 MCP 工具...
+🔑 使用直接传递的环境变量: AMAP_MAPS_API_KEY
+📝 使用 Stdio 传输 (命令): uvx amap-mcp-server
+🔗 连接到 MCP 服务器...
+  - 创建天气查询Agent...
+✅ 工具 'amap' 已注册。
+  - 创建酒店推荐Agent...
+✅ 工具 'amap' 已注册。
+  - 创建行程规划Agent...
+✅ 多智能体系统初始化成功 (供应商=amap)
+   天气查询Agent: 1 个工具
+   酒店推荐Agent: 1 个工具
+
+============================================================
+🚀 开始多智能体协作规划旅行...
+途经城市: 洛阳
+日期: 2026-07-22 至 2026-07-23
+天数: 2天
+偏好: 无
+============================================================
+
+[XHS_SIGN] signature JS engine loaded
+  [1/1] 正在搜索 洛阳 的景点...
+🔍 [XHS_SERVICE] 正在呼叫小红书 API 搜索: 洛阳 景点
+INFO:     127.0.0.1:64513 - "POST /api/trip/plan HTTP/1.1" 200 OK
+C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\websockets\legacy\server.py:1178: DeprecationWarning: remove second argument of ws_handler
+  warnings.warn("remove second argument of ws_handler", DeprecationWarning)
+INFO:     127.0.0.1:51556 - "WebSocket /api/trip/ws/ebad04df" [accepted]
+INFO:     connection open
+Traceback (most recent call last):
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 276, in search_xhs_attractions
+    res_json = client.search_notes(keyword=query)
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 125, in search_notes
+    response = requests.post(
+        self.BASE_URL + api,
+    ...<3 lines>...
+        timeout=15,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\api.py", line 134, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connection.py", line 499, in request
+    self.putheader(header, value)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connection.py", line 413, in putheader
+    super().putheader(header, *values)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 1345, in putheader
+    raise ValueError('Invalid header value %r' % (values[i],))
+ValueError: Invalid header value b'a1=19eef7e9b63ug96hrnhsrtq5ttyqhofbl95sldcqx50000393935; abRequestId=e7ca973f-5587-582b-bc54-75d5b4169d8f; acw_tc=0a00da1317821345114763160e279a0960435cc1008509b275c940b42ca377; ets=1782134512396; gid=yjddiWd0Df1qyjddiWdjDjfSKq7kjKxFIxMF2AC9A299vM28AxliD1888qjqjq28SKqdqyy4; id_token=VjEAAHomSJdZDTVLZmOBAsalMwewlQr7xrT3hsmRt5Hgtd6KhRbqO1IcXwMbc16q3QREgfep5QWkTW4xcP5yGKygsNVQ3C/JQm2iEfNkmht+Kik/GlNTzxx9baiB/TvZin5CTum3;\nloadts=1782134512478; sec_poison_id=c9b4f72b-643e-4676-90f0-e23b2105695d; unread={%22ub%22:%226a16c30c0000000035039910%22%2C%22ue%22:%226a14654d0000000006034047%22%2C%22uc%22:31}; webBuild=6.21.2; webId=bcbf2eabc3f9723ede0bbbc474280bad; web_session=040069b4c798b8678275a77f0c384b24694adc; websectiga=59d3ef1e60c4aa37a7df3c23467bd46d7f1da0b1918cf335ee7f2e9e52ac04cf; x-rednote-datactry=CN; x-rednote-holderctry=CN; xsecappid=xhs-pc-web'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\联想\TripStar\backend\app\agents\trip_planner_agent.py", line 474, in plan_trip
+    attraction_response = await asyncio.to_thread(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^
+        search_xhs_attractions, city, keywords, _lang
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\asyncio\threads.py", line 26, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 312, in search_xhs_attractions
+    raise XHSCookieExpiredError(
+        f"小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE"
+    )
+app.services.xhs_service.XHSCookieExpiredError: 小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE
+Traceback (most recent call last):
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 276, in search_xhs_attractions
+    res_json = client.search_notes(keyword=query)
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 125, in search_notes
+    response = requests.post(
+        self.BASE_URL + api,
+    ...<3 lines>...
+        timeout=15,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\api.py", line 134, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connection.py", line 499, in request
+    self.putheader(header, value)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connection.py", line 413, in putheader
+    super().putheader(header, *values)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 1345, in putheader
+    raise ValueError('Invalid header value %r' % (values[i],))
+ValueError: Invalid header value b'a1=19eef7e9b63ug96hrnhsrtq5ttyqhofbl95sldcqx50000393935; abRequestId=e7ca973f-5587-582b-bc54-75d5b4169d8f; acw_tc=0a00da1317821345114763160e279a0960435cc1008509b275c940b42ca377; ets=1782134512396; gid=yjddiWd0Df1qyjddiWdjDjfSKq7kjKxFIxMF2AC9A299vM28AxliD1888qjqjq28SKqdqyy4; id_token=VjEAAHomSJdZDTVLZmOBAsalMwewlQr7xrT3hsmRt5Hgtd6KhRbqO1IcXwMbc16q3QREgfep5QWkTW4xcP5yGKygsNVQ3C/JQm2iEfNkmht+Kik/GlNTzxx9baiB/TvZin5CTum3;\nloadts=1782134512478; sec_poison_id=c9b4f72b-643e-4676-90f0-e23b2105695d; unread={%22ub%22:%226a16c30c0000000035039910%22%2C%22ue%22:%226a14654d0000000006034047%22%2C%22uc%22:31}; webBuild=6.21.2; webId=bcbf2eabc3f9723ede0bbbc474280bad; web_session=040069b4c798b8678275a77f0c384b24694adc; websectiga=59d3ef1e60c4aa37a7df3c23467bd46d7f1da0b1918cf335ee7f2e9e52ac04cf; x-rednote-datactry=CN; x-rednote-holderctry=CN; xsecappid=xhs-pc-web'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\联想\TripStar\backend\app\agents\trip_planner_agent.py", line 474, in plan_trip
+    attraction_response = await asyncio.to_thread(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^
+        search_xhs_attractions, city, keywords, _lang
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\asyncio\threads.py", line 26, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 312, in search_xhs_attractions
+    raise XHSCookieExpiredError(
+        f"小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE"
+    )
+app.services.xhs_service.XHSCookieExpiredError: 小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\联想\TripStar\backend\app\api\routes\trip.py", line 342, in _run_trip_planning
+    trip_plan = await agent.plan_trip(request, progress_callback=progress_callback)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\联想\TripStar\backend\app\agents\trip_planner_agent.py", line 551, in plan_trip
+    raise RuntimeError(f"旅行计划生成失败: {str(e)}") from e
+RuntimeError: 旅行计划生成失败: 小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE
+INFO:     connection closed
+❌ 小红书接口抓取崩盘: Invalid header value b'a1=19eef7e9b63ug96hrnhsrtq5ttyqhofbl95sldcqx50000393935; abRequestId=e7ca973f-5587-582b-bc54-75d5b4169d8f; acw_tc=0a00da1317821345114763160e279a0960435cc1008509b275c940b42ca377; ets=1782134512396; gid=yjddiWd0Df1qyjddiWdjDjfSKq7kjKxFIxMF2AC9A299vM28AxliD1888qjqjq28SKqdqyy4; id_token=VjEAAHomSJdZDTVLZmOBAsalMwewlQr7xrT3hsmRt5Hgtd6KhRbqO1IcXwMbc16q3QREgfep5QWkTW4xcP5yGKygsNVQ3C/JQm2iEfNkmht+Kik/GlNTzxx9baiB/TvZin5CTum3;\nloadts=1782134512478; sec_poison_id=c9b4f72b-643e-4676-90f0-e23b2105695d; unread={%22ub%22:%226a16c30c0000000035039910%22%2C%22ue%22:%226a14654d0000000006034047%22%2C%22uc%22:31}; webBuild=6.21.2; webId=bcbf2eabc3f9723ede0bbbc474280bad; web_session=040069b4c798b8678275a77f0c384b24694adc; websectiga=59d3ef1e60c4aa37a7df3c23467bd46d7f1da0b1918cf335ee7f2e9e52ac04cf; x-rednote-datactry=CN; x-rednote-holderctry=CN; xsecappid=xhs-pc-web'
+❌ 生成旅行计划失败: 小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE
+❌ 任务 ebad04df 失败: 旅行计划生成失败: 小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE
+
+============================================================
+📥 收到旅行规划请求 (task_id=a597daad):
+   城市: 洛阳
+   日期: 2026-07-22 - 2026-07-23
+   天数: 2
+============================================================
+
+
+============================================================
+🚀 开始多智能体协作规划旅行...
+途经城市: 洛阳
+日期: 2026-07-22 至 2026-07-23
+天数: 2天
+偏好: 无
+============================================================
+
+  [1/1] 正在搜索 洛阳 的景点...
+INFO:     127.0.0.1:63825 - "POST /api/trip/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56233 - "WebSocket /api/trip/ws/a597daad" [accepted]
+INFO:     connection open
+Traceback (most recent call last):
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 276, in search_xhs_attractions
+    res_json = client.search_notes(keyword=query)
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 125, in search_notes
+    response = requests.post(
+        self.BASE_URL + api,
+    ...<3 lines>...
+        timeout=15,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\api.py", line 134, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connection.py", line 499, in request
+    self.putheader(header, value)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connection.py", line 413, in putheader
+    super().putheader(header, *values)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 1345, in putheader
+    raise ValueError('Invalid header value %r' % (values[i],))
+ValueError: Invalid header value b'a1=19eef7e9b63ug96hrnhsrtq5ttyqhofbl95sldcqx50000393935; abRequestId=e7ca973f-5587-582b-bc54-75d5b4169d8f; acw_tc=0a00da1317821345114763160e279a0960435cc1008509b275c940b42ca377; ets=1782134512396; gid=yjddiWd0Df1qyjddiWdjDjfSKq7kjKxFIxMF2AC9A299vM28AxliD1888qjqjq28SKqdqyy4; id_token=VjEAAHomSJdZDTVLZmOBAsalMwewlQr7xrT3hsmRt5Hgtd6KhRbqO1IcXwMbc16q3QREgfep5QWkTW4xcP5yGKygsNVQ3C/JQm2iEfNkmht+Kik/GlNTzxx9baiB/TvZin5CTum3;\nloadts=1782134512478; sec_poison_id=c9b4f72b-643e-4676-90f0-e23b2105695d; unread={%22ub%22:%226a16c30c0000000035039910%22%2C%22ue%22:%226a14654d0000000006034047%22%2C%22uc%22:31}; webBuild=6.21.2; webId=bcbf2eabc3f9723ede0bbbc474280bad; web_session=040069b4c798b8678275a77f0c384b24694adc; websectiga=59d3ef1e60c4aa37a7df3c23467bd46d7f1da0b1918cf335ee7f2e9e52ac04cf; x-rednote-datactry=CN; x-rednote-holderctry=CN; xsecappid=xhs-pc-web'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\联想\TripStar\backend\app\agents\trip_planner_agent.py", line 474, in plan_trip
+    attraction_response = await asyncio.to_thread(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^
+        search_xhs_attractions, city, keywords, _lang
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\asyncio\threads.py", line 26, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 312, in search_xhs_attractions
+    raise XHSCookieExpiredError(
+        f"小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE"
+    )
+app.services.xhs_service.XHSCookieExpiredError: 小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE
+Traceback (most recent call last):
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 276, in search_xhs_attractions
+    res_json = client.search_notes(keyword=query)
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 125, in search_notes
+    response = requests.post(
+        self.BASE_URL + api,
+    ...<3 lines>...
+        timeout=15,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\api.py", line 134, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connection.py", line 499, in request
+    self.putheader(header, value)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connection.py", line 413, in putheader
+    super().putheader(header, *values)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 1345, in putheader
+    raise ValueError('Invalid header value %r' % (values[i],))
+ValueError: Invalid header value b'a1=19eef7e9b63ug96hrnhsrtq5ttyqhofbl95sldcqx50000393935; abRequestId=e7ca973f-5587-582b-bc54-75d5b4169d8f; acw_tc=0a00da1317821345114763160e279a0960435cc1008509b275c940b42ca377; ets=1782134512396; gid=yjddiWd0Df1qyjddiWdjDjfSKq7kjKxFIxMF2AC9A299vM28AxliD1888qjqjq28SKqdqyy4; id_token=VjEAAHomSJdZDTVLZmOBAsalMwewlQr7xrT3hsmRt5Hgtd6KhRbqO1IcXwMbc16q3QREgfep5QWkTW4xcP5yGKygsNVQ3C/JQm2iEfNkmht+Kik/GlNTzxx9baiB/TvZin5CTum3;\nloadts=1782134512478; sec_poison_id=c9b4f72b-643e-4676-90f0-e23b2105695d; unread={%22ub%22:%226a16c30c0000000035039910%22%2C%22ue%22:%226a14654d0000000006034047%22%2C%22uc%22:31}; webBuild=6.21.2; webId=bcbf2eabc3f9723ede0bbbc474280bad; web_session=040069b4c798b8678275a77f0c384b24694adc; websectiga=59d3ef1e60c4aa37a7df3c23467bd46d7f1da0b1918cf335ee7f2e9e52ac04cf; x-rednote-datactry=CN; x-rednote-holderctry=CN; xsecappid=xhs-pc-web'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\联想\TripStar\backend\app\agents\trip_planner_agent.py", line 474, in plan_trip
+    attraction_response = await asyncio.to_thread(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^
+        search_xhs_attractions, city, keywords, _lang
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\asyncio\threads.py", line 26, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 312, in search_xhs_attractions
+    raise XHSCookieExpiredError(
+        f"小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE"
+    )
+app.services.xhs_service.XHSCookieExpiredError: 小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\联想\TripStar\backend\app\api\routes\trip.py", line 342, in _run_trip_planning
+    trip_plan = await agent.plan_trip(request, progress_callback=progress_callback)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\联想\TripStar\backend\app\agents\trip_planner_agent.py", line 551, in plan_trip
+    raise RuntimeError(f"旅行计划生成失败: {str(e)}") from e
+RuntimeError: 旅行计划生成失败: 小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE
+INFO:     connection closed
+🔍 [XHS_SERVICE] 正在呼叫小红书 API 搜索: 洛阳 景点
+❌ 小红书接口抓取崩盘: Invalid header value b'a1=19eef7e9b63ug96hrnhsrtq5ttyqhofbl95sldcqx50000393935; abRequestId=e7ca973f-5587-582b-bc54-75d5b4169d8f; acw_tc=0a00da1317821345114763160e279a0960435cc1008509b275c940b42ca377; ets=1782134512396; gid=yjddiWd0Df1qyjddiWdjDjfSKq7kjKxFIxMF2AC9A299vM28AxliD1888qjqjq28SKqdqyy4; id_token=VjEAAHomSJdZDTVLZmOBAsalMwewlQr7xrT3hsmRt5Hgtd6KhRbqO1IcXwMbc16q3QREgfep5QWkTW4xcP5yGKygsNVQ3C/JQm2iEfNkmht+Kik/GlNTzxx9baiB/TvZin5CTum3;\nloadts=1782134512478; sec_poison_id=c9b4f72b-643e-4676-90f0-e23b2105695d; unread={%22ub%22:%226a16c30c0000000035039910%22%2C%22ue%22:%226a14654d0000000006034047%22%2C%22uc%22:31}; webBuild=6.21.2; webId=bcbf2eabc3f9723ede0bbbc474280bad; web_session=040069b4c798b8678275a77f0c384b24694adc; websectiga=59d3ef1e60c4aa37a7df3c23467bd46d7f1da0b1918cf335ee7f2e9e52ac04cf; x-rednote-datactry=CN; x-rednote-holderctry=CN; xsecappid=xhs-pc-web'
+❌ 生成旅行计划失败: 小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE
+❌ 任务 a597daad 失败: 旅行计划生成失败: 小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE
+INFO:     127.0.0.1:56107 - "OPTIONS /api/trip/plan HTTP/1.1" 200 OK
+
+============================================================
+📥 收到旅行规划请求 (task_id=b923b645):
+   城市: 洛阳
+   日期: 2026-07-22 - 2026-07-23
+   天数: 2
+============================================================
+
+
+============================================================
+🚀 开始多智能体协作规划旅行...
+途经城市: 洛阳
+日期: 2026-07-22 至 2026-07-23
+天数: 2天
+偏好: 无
+============================================================
+
+  [1/1] 正在搜索 洛阳 的景点...
+INFO:     127.0.0.1:56107 - "POST /api/trip/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58463 - "WebSocket /api/trip/ws/b923b645" [accepted]
+INFO:     connection open
+Traceback (most recent call last):
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 276, in search_xhs_attractions
+    res_json = client.search_notes(keyword=query)
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 125, in search_notes
+    response = requests.post(
+        self.BASE_URL + api,
+    ...<3 lines>...
+        timeout=15,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\api.py", line 134, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connection.py", line 499, in request
+    self.putheader(header, value)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connection.py", line 413, in putheader
+    super().putheader(header, *values)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 1345, in putheader
+    raise ValueError('Invalid header value %r' % (values[i],))
+ValueError: Invalid header value b'a1=19eef7e9b63ug96hrnhsrtq5ttyqhofbl95sldcqx50000393935; abRequestId=e7ca973f-5587-582b-bc54-75d5b4169d8f; acw_tc=0a00da1317821345114763160e279a0960435cc1008509b275c940b42ca377; ets=1782134512396; gid=yjddiWd0Df1qyjddiWdjDjfSKq7kjKxFIxMF2AC9A299vM28AxliD1888qjqjq28SKqdqyy4; id_token=VjEAAHomSJdZDTVLZmOBAsalMwewlQr7xrT3hsmRt5Hgtd6KhRbqO1IcXwMbc16q3QREgfep5QWkTW4xcP5yGKygsNVQ3C/JQm2iEfNkmht+Kik/GlNTzxx9baiB/TvZin5CTum3;\nloadts=1782134512478; sec_poison_id=c9b4f72b-643e-4676-90f0-e23b2105695d; unread={%22ub%22:%226a16c30c0000000035039910%22%2C%22ue%22:%226a14654d0000000006034047%22%2C%22uc%22:31}; webBuild=6.21.2; webId=bcbf2eabc3f9723ede0bbbc474280bad; web_session=040069b4c798b8678275a77f0c384b24694adc; websectiga=59d3ef1e60c4aa37a7df3c23467bd46d7f1da0b1918cf335ee7f2e9e52ac04cf; x-rednote-datactry=CN; x-rednote-holderctry=CN; xsecappid=xhs-pc-web'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\联想\TripStar\backend\app\agents\trip_planner_agent.py", line 474, in plan_trip
+    attraction_response = await asyncio.to_thread(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^
+        search_xhs_attractions, city, keywords, _lang
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\asyncio\threads.py", line 26, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 312, in search_xhs_attractions
+    raise XHSCookieExpiredError(
+        f"小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE"
+    )
+app.services.xhs_service.XHSCookieExpiredError: 小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE
+Traceback (most recent call last):
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 276, in search_xhs_attractions
+    res_json = client.search_notes(keyword=query)
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 125, in search_notes
+    response = requests.post(
+        self.BASE_URL + api,
+    ...<3 lines>...
+        timeout=15,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\api.py", line 134, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connection.py", line 499, in request
+    self.putheader(header, value)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connection.py", line 413, in putheader
+    super().putheader(header, *values)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 1345, in putheader
+    raise ValueError('Invalid header value %r' % (values[i],))
+ValueError: Invalid header value b'a1=19eef7e9b63ug96hrnhsrtq5ttyqhofbl95sldcqx50000393935; abRequestId=e7ca973f-5587-582b-bc54-75d5b4169d8f; acw_tc=0a00da1317821345114763160e279a0960435cc1008509b275c940b42ca377; ets=1782134512396; gid=yjddiWd0Df1qyjddiWdjDjfSKq7kjKxFIxMF2AC9A299vM28AxliD1888qjqjq28SKqdqyy4; id_token=VjEAAHomSJdZDTVLZmOBAsalMwewlQr7xrT3hsmRt5Hgtd6KhRbqO1IcXwMbc16q3QREgfep5QWkTW4xcP5yGKygsNVQ3C/JQm2iEfNkmht+Kik/GlNTzxx9baiB/TvZin5CTum3;\nloadts=1782134512478; sec_poison_id=c9b4f72b-643e-4676-90f0-e23b2105695d; unread={%22ub%22:%226a16c30c0000000035039910%22%2C%22ue%22:%226a14654d0000000006034047%22%2C%22uc%22:31}; webBuild=6.21.2; webId=bcbf2eabc3f9723ede0bbbc474280bad; web_session=040069b4c798b8678275a77f0c384b24694adc; websectiga=59d3ef1e60c4aa37a7df3c23467bd46d7f1da0b1918cf335ee7f2e9e52ac04cf; x-rednote-datactry=CN; x-rednote-holderctry=CN; xsecappid=xhs-pc-web'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\联想\TripStar\backend\app\agents\trip_planner_agent.py", line 474, in plan_trip
+    attraction_response = await asyncio.to_thread(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^
+        search_xhs_attractions, city, keywords, _lang
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\asyncio\threads.py", line 26, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 312, in search_xhs_attractions
+    raise XHSCookieExpiredError(
+        f"小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE"
+    )
+app.services.xhs_service.XHSCookieExpiredError: 小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\联想\TripStar\backend\app\api\routes\trip.py", line 342, in _run_trip_planning
+    trip_plan = await agent.plan_trip(request, progress_callback=progress_callback)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\联想\TripStar\backend\app\agents\trip_planner_agent.py", line 551, in plan_trip
+    raise RuntimeError(f"旅行计划生成失败: {str(e)}") from e
+RuntimeError: 旅行计划生成失败: 小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE
+INFO:     connection closed
+🔍 [XHS_SERVICE] 正在呼叫小红书 API 搜索: 洛阳 景点
+❌ 小红书接口抓取崩盘: Invalid header value b'a1=19eef7e9b63ug96hrnhsrtq5ttyqhofbl95sldcqx50000393935; abRequestId=e7ca973f-5587-582b-bc54-75d5b4169d8f; acw_tc=0a00da1317821345114763160e279a0960435cc1008509b275c940b42ca377; ets=1782134512396; gid=yjddiWd0Df1qyjddiWdjDjfSKq7kjKxFIxMF2AC9A299vM28AxliD1888qjqjq28SKqdqyy4; id_token=VjEAAHomSJdZDTVLZmOBAsalMwewlQr7xrT3hsmRt5Hgtd6KhRbqO1IcXwMbc16q3QREgfep5QWkTW4xcP5yGKygsNVQ3C/JQm2iEfNkmht+Kik/GlNTzxx9baiB/TvZin5CTum3;\nloadts=1782134512478; sec_poison_id=c9b4f72b-643e-4676-90f0-e23b2105695d; unread={%22ub%22:%226a16c30c0000000035039910%22%2C%22ue%22:%226a14654d0000000006034047%22%2C%22uc%22:31}; webBuild=6.21.2; webId=bcbf2eabc3f9723ede0bbbc474280bad; web_session=040069b4c798b8678275a77f0c384b24694adc; websectiga=59d3ef1e60c4aa37a7df3c23467bd46d7f1da0b1918cf335ee7f2e9e52ac04cf; x-rednote-datactry=CN; x-rednote-holderctry=CN; xsecappid=xhs-pc-web'
+❌ 生成旅行计划失败: 小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE
+❌ 任务 b923b645 失败: 旅行计划生成失败: 小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE
+
+============================================================
+📥 收到旅行规划请求 (task_id=4609af0f):
+   城市: 洛阳
+   日期: 2026-07-22 - 2026-07-23
+   天数: 2
+============================================================
+
+
+============================================================
+🚀 开始多智能体协作规划旅行...
+途经城市: 洛阳
+日期: 2026-07-22 至 2026-07-23
+天数: 2天
+偏好: 无
+============================================================
+
+  [1/1] 正在搜索 洛阳 的景点...
+🔍 [XHS_SERVICE] 正在呼叫小红书 API 搜索: 洛阳 景点
+INFO:     127.0.0.1:64674 - "POST /api/trip/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51341 - "WebSocket /api/trip/ws/4609af0f" [accepted]
+INFO:     connection open
+Traceback (most recent call last):
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 276, in search_xhs_attractions
+    res_json = client.search_notes(keyword=query)
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 125, in search_notes
+    response = requests.post(
+        self.BASE_URL + api,
+    ...<3 lines>...
+        timeout=15,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\api.py", line 134, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connection.py", line 499, in request
+    self.putheader(header, value)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connection.py", line 413, in putheader
+    super().putheader(header, *values)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 1345, in putheader
+    raise ValueError('Invalid header value %r' % (values[i],))
+ValueError: Invalid header value b'a1=19eef7e9b63ug96hrnhsrtq5ttyqhofbl95sldcqx50000393935; abRequestId=e7ca973f-5587-582b-bc54-75d5b4169d8f; acw_tc=0a00da1317821345114763160e279a0960435cc1008509b275c940b42ca377; ets=1782134512396; gid=yjddiWd0Df1qyjddiWdjDjfSKq7kjKxFIxMF2AC9A299vM28AxliD1888qjqjq28SKqdqyy4; id_token=VjEAAHomSJdZDTVLZmOBAsalMwewlQr7xrT3hsmRt5Hgtd6KhRbqO1IcXwMbc16q3QREgfep5QWkTW4xcP5yGKygsNVQ3C/JQm2iEfNkmht+Kik/GlNTzxx9baiB/TvZin5CTum3;\nloadts=1782134512478; sec_poison_id=c9b4f72b-643e-4676-90f0-e23b2105695d; unread={%22ub%22:%226a16c30c0000000035039910%22%2C%22ue%22:%226a14654d0000000006034047%22%2C%22uc%22:31}; webBuild=6.21.2; webId=bcbf2eabc3f9723ede0bbbc474280bad; web_session=040069b4c798b8678275a77f0c384b24694adc; websectiga=59d3ef1e60c4aa37a7df3c23467bd46d7f1da0b1918cf335ee7f2e9e52ac04cf; x-rednote-datactry=CN; x-rednote-holderctry=CN; xsecappid=xhs-pc-web'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\联想\TripStar\backend\app\agents\trip_planner_agent.py", line 474, in plan_trip
+    attraction_response = await asyncio.to_thread(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^
+        search_xhs_attractions, city, keywords, _lang
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\asyncio\threads.py", line 26, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 312, in search_xhs_attractions
+    raise XHSCookieExpiredError(
+        f"小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE"
+    )
+app.services.xhs_service.XHSCookieExpiredError: 小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE
+Traceback (most recent call last):
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 276, in search_xhs_attractions
+    res_json = client.search_notes(keyword=query)
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 125, in search_notes
+    response = requests.post(
+        self.BASE_URL + api,
+    ...<3 lines>...
+        timeout=15,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\api.py", line 134, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\requests\adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connection.py", line 499, in request
+    self.putheader(header, value)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\联想\TripStar\backend\.venv\Lib\site-packages\urllib3\connection.py", line 413, in putheader
+    super().putheader(header, *values)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 1345, in putheader
+    raise ValueError('Invalid header value %r' % (values[i],))
+ValueError: Invalid header value b'a1=19eef7e9b63ug96hrnhsrtq5ttyqhofbl95sldcqx50000393935; abRequestId=e7ca973f-5587-582b-bc54-75d5b4169d8f; acw_tc=0a00da1317821345114763160e279a0960435cc1008509b275c940b42ca377; ets=1782134512396; gid=yjddiWd0Df1qyjddiWdjDjfSKq7kjKxFIxMF2AC9A299vM28AxliD1888qjqjq28SKqdqyy4; id_token=VjEAAHomSJdZDTVLZmOBAsalMwewlQr7xrT3hsmRt5Hgtd6KhRbqO1IcXwMbc16q3QREgfep5QWkTW4xcP5yGKygsNVQ3C/JQm2iEfNkmht+Kik/GlNTzxx9baiB/TvZin5CTum3;\nloadts=1782134512478; sec_poison_id=c9b4f72b-643e-4676-90f0-e23b2105695d; unread={%22ub%22:%226a16c30c0000000035039910%22%2C%22ue%22:%226a14654d0000000006034047%22%2C%22uc%22:31}; webBuild=6.21.2; webId=bcbf2eabc3f9723ede0bbbc474280bad; web_session=040069b4c798b8678275a77f0c384b24694adc; websectiga=59d3ef1e60c4aa37a7df3c23467bd46d7f1da0b1918cf335ee7f2e9e52ac04cf; x-rednote-datactry=CN; x-rednote-holderctry=CN; xsecappid=xhs-pc-web'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\联想\TripStar\backend\app\agents\trip_planner_agent.py", line 474, in plan_trip
+    attraction_response = await asyncio.to_thread(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^
+        search_xhs_attractions, city, keywords, _lang
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\asyncio\threads.py", line 26, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\联想\TripStar\backend\app\services\xhs_service.py", line 312, in search_xhs_attractions
+    raise XHSCookieExpiredError(
+        f"小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE"
+    )
+app.services.xhs_service.XHSCookieExpiredError: 小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\联想\TripStar\backend\app\api\routes\trip.py", line 342, in _run_trip_planning
+    trip_plan = await agent.plan_trip(request, progress_callback=progress_callback)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\联想\TripStar\backend\app\agents\trip_planner_agent.py", line 551, in plan_trip
+    raise RuntimeError(f"旅行计划生成失败: {str(e)}") from e
+RuntimeError: 旅行计划生成失败: 小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE
+INFO:     connection closed
+❌ 小红书接口抓取崩盘: Invalid header value b'a1=19eef7e9b63ug96hrnhsrtq5ttyqhofbl95sldcqx50000393935; abRequestId=e7ca973f-5587-582b-bc54-75d5b4169d8f; acw_tc=0a00da1317821345114763160e279a0960435cc1008509b275c940b42ca377; ets=1782134512396; gid=yjddiWd0Df1qyjddiWdjDjfSKq7kjKxFIxMF2AC9A299vM28AxliD1888qjqjq28SKqdqyy4; id_token=VjEAAHomSJdZDTVLZmOBAsalMwewlQr7xrT3hsmRt5Hgtd6KhRbqO1IcXwMbc16q3QREgfep5QWkTW4xcP5yGKygsNVQ3C/JQm2iEfNkmht+Kik/GlNTzxx9baiB/TvZin5CTum3;\nloadts=1782134512478; sec_poison_id=c9b4f72b-643e-4676-90f0-e23b2105695d; unread={%22ub%22:%226a16c30c0000000035039910%22%2C%22ue%22:%226a14654d0000000006034047%22%2C%22uc%22:31}; webBuild=6.21.2; webId=bcbf2eabc3f9723ede0bbbc474280bad; web_session=040069b4c798b8678275a77f0c384b24694adc; websectiga=59d3ef1e60c4aa37a7df3c23467bd46d7f1da0b1918cf335ee7f2e9e52ac04cf; x-rednote-datactry=CN; x-rednote-holderctry=CN; xsecappid=xhs-pc-web'
+❌ 生成旅行计划失败: 小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE
+❌ 任务 4609af0f 失败: 旅行计划生成失败: 小红书访问超时或 Cookie 失效(风控拦截)，抓取失败。请更新 XHS_COOKIE
+INFO:     127.0.0.1:59395 - "GET /api/trip/history?limit=8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52923 - "GET /api/trip/history?limit=8 HTTP/1.1" 200 OK
