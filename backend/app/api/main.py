@@ -16,6 +16,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from ..config import get_settings, validate_config, print_config
+from ..database import init_db
 from .routes import trip, poi, map as map_routes, chat, settings as settings_routes
 
 # 获取配置
@@ -66,6 +67,9 @@ async def startup_event():
     print("\n" + "="*60)
     print(f"🚀 {settings.app_name} v{settings.app_version}")
     print("="*60)
+    
+    # 初始化数据库
+    init_db()
     
     # 打印配置信息
     print_config()
